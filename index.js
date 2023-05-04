@@ -65,3 +65,43 @@ const init = async () => {
         }
     });
 };
+
+//the create manager function
+const createManager = async () => {
+    //here we make the array of manager questions for user input
+    const managerQuestions = [
+        {
+            type: "input",
+            message: "Enter manager name:",
+            name: "name",
+            validate: validateInput,
+        },
+        {
+            type: "input",
+            message: "Enter employee ID:",
+            name: "id",
+            validate: validateInput,
+        },
+        {
+            type: "input",
+            message: "Enter your office number:",
+            name: "officeNumber",
+            validate: validateInput,
+        },
+        {
+            type: "input",
+            message: "Enter work email:",
+            name: "email",
+            validate: validateInput,
+        },
+    ];
+
+    //the manager's answers will be generated from the manager's input to the questions
+    const managerAnswers = await inquirer.prompt(managerQuestions);
+
+    //the new instance for the manager class will take these answers
+    const manager = new Manager(managerAnswers);
+
+    //the manager object is then pushed into the employees array
+    employees.push(manager);
+};

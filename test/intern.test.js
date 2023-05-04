@@ -6,6 +6,7 @@ describe("Intern", () => {
         id: 170,
         email: "jessica@test.com",
         school: "Columbia University",
+        role: "Intern"
     };
     describe("constructor tests", () => {
         test("should construct a new instance of the intern class", () => {
@@ -19,6 +20,7 @@ describe("Intern", () => {
                 id: 170,
                 email: "jessica@test.com",
                 school: "Columbia University",
+                role: "Intern"
             });
         });
     });
@@ -37,7 +39,7 @@ describe("Intern", () => {
         });
         test("should return school when getSchool is called", () => {
             const intern = new Intern(mockIntern);
-            expect(intern.getGithub()).toEqual("Columbia University");
+            expect(intern.getSchool()).toEqual("Columbia University");
         });
         test("should return intern role when getRole is called", () => {
             const intern = new Intern(mockIntern);

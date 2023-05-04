@@ -4,8 +4,9 @@ describe("Manager", () => {
     const mockManager = {
         name: "Amy",
         id: 23,
-        email: "amya@test.com",
+        email: "amy@test.com",
         officeNumber: 305,
+        role: "Manager"
     };
     describe("constructor tests", () => {
         test("should construct a new instance of the manager class", () => {
@@ -13,12 +14,13 @@ describe("Manager", () => {
           expect(manager).toBeInstanceOf(Manager);
         });
         test("should construct a new instance of Manager class with name, id, email, and officeNumber", () => {
-            const manager = new Manager(mockM);
+            const manager = new Manager(mockManager);
             expect(manager).toEqual({
                 name: "Amy",
                 id: 23,
-                email: "amya@test.com",
+                email: "amy@test.com",
                 officeNumber: 305,
+                role: "Manager"
             });
         });
     });
@@ -37,7 +39,7 @@ describe("Manager", () => {
         });
         test("should return officeNumber when getOfficeNumber is called", () => {
             const manager = new Manager(mockManager);
-            expect(manager.getGithub()).toEqual(305);
+            expect(manager.getOfficeNumber()).toEqual(305);
         });
         test("should return manager role when getRole is called", () => {
             const manager = new Manager(mockManager);

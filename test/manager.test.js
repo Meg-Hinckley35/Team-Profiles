@@ -1,47 +1,47 @@
 const Manager = require("../lib/manager");
 
 describe("Manager", () => {
-    const mockIntern = {
+    const mockManager = {
         name: "Amy",
         id: 23,
         email: "amya@test.com",
         officeNumber: 305,
     };
     describe("constructor tests", () => {
-        test("should construct a new instance of the intern class", () => {
-          const intern = new Intern(mockIntern);
-          expect(intern).toBeInstanceOf(Intern);
+        test("should construct a new instance of the manager class", () => {
+          const manager = new Manager(mockManager);
+          expect(manager).toBeInstanceOf(Manager);
         });
-        test("should construct a new instance of Intern class with name, id, email, and school", () => {
-            const intern = new Intern(mockIntern);
-            expect(intern).toEqual({
-                name: "Jessica",
-                id: 170,
-                email: "jessica@test.com",
-                school: "Columbia University",
+        test("should construct a new instance of Manager class with name, id, email, and officeNumber", () => {
+            const manager = new Manager(mockM);
+            expect(manager).toEqual({
+                name: "Amy",
+                id: 23,
+                email: "amya@test.com",
+                officeNumber: 305,
             });
         });
     });
     describe("method tests", () => {
         test("should return id when getId is called", () => {
-            const intern = new Intern(mockIntern);
-            expect(intern.getId()).toEqual(170);
+            const manager = new Manager(mockManager);
+            expect(manager.getId()).toEqual(23);
         });
         test("should return name when getName is called", () => {
-            const intern = new Intern(mockIntern);
-            expect(intern.getName()).toEqual("Jessica");
+            const manager = new Manager(mockManager);
+            expect(manager.getName()).toEqual("Amy");
         });
         test("should return email when getEmail is called", () => {
-            const intern = new Intern(mockIntern);
-            expect(intern.getEmail()).toEqual("jessica@test.com");
+            const manager = new Manager(mockManager);
+            expect(manager.getEmail()).toEqual("amy@test.com");
         });
-        test("should return school when getSchool is called", () => {
-            const intern = new Intern(mockIntern);
-            expect(intern.getGithub()).toEqual("Columbia University");
+        test("should return officeNumber when getOfficeNumber is called", () => {
+            const manager = new Manager(mockManager);
+            expect(manager.getGithub()).toEqual(305);
         });
-        test("should return intern role when getRole is called", () => {
-            const intern = new Intern(mockIntern);
-            expect(intern.getRole()).toEqual("Intern");
+        test("should return manager role when getRole is called", () => {
+            const manager = new Manager(mockManager);
+            expect(manager.getRole()).toEqual("Manager");
         });
     });
 });

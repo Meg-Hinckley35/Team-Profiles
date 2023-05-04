@@ -6,6 +6,7 @@ describe("Engineer", () => {
         id: 68,
         email: "brady@test.com",
         github: "www.github.com/brady_test",
+        role: "Engineer"
     };
     describe("constructor tests", () => {
         test("should construct a new instance of the engineer class", () => {
@@ -19,6 +20,7 @@ describe("Engineer", () => {
                 id: 68,
                 email: "brady@test.com",
                 github: "www.github.com/brady_test",
+                role: "Engineer"
             });
         });
     });

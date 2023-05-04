@@ -105,3 +105,44 @@ const createManager = async () => {
     //the manager object is then pushed into the employees array
     employees.push(manager);
 };
+
+//Next is the create engineer function
+const createEngineer = async () => {
+    //setting the array of engineer questions for user input
+    const engineerQuestions = [
+        {
+            type: "input",
+            message: "Enter engineer name:",
+            name: "name",
+            validate: validateInput,
+        },
+        {
+            type: "input",
+            message: "Enter engineer ID:",
+            name: "id",
+            validate: validateInput,
+        },
+        {
+            type: "input",
+            message: "Enter your email:",
+            name: "email",
+            validate: validateInput,
+        },
+        {
+            type: "input",
+            message: "Enter your github profile:",
+            name: "github",
+            validate: validateInput,
+        },
+    ];
+
+    //the engineer's answers will be generated from the user input to the questions
+    const engineerAnswers = await inquirer.prompt(engineerQuestions);
+
+    //the new instance for the engineer class will take these answers
+    const engineer = new Engineer(engineerAnswers);
+
+    //the engineer object is then pushed into the employees array
+    employees.push(engineer);
+};
+

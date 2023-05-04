@@ -1,0 +1,25 @@
+.header{
+    background-color: aliceblue;
+
+}
+
+.card-header{
+    background-color: rgb(180, 132, 226);
+}
+
+.car-title{
+    color: white;
+}
+
+.card-body{
+    background-color: white;
+}
+
+.list-group{
+    color: black;
+}
+
+.card{
+    box-shadow: 10px 10px 10px grey;
+}
+

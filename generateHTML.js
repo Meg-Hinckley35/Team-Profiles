@@ -85,3 +85,25 @@ const renderIntern = (intern) => {
     //we then return the updated template
     return template;
 };
+
+//render full markdown function and pass in HTML
+const renderFullMarkdown = (HTML) => {
+    //this will access the full markdown html file
+    let template = fs.readFileSync(
+        path.resolve(templatesDir, "full-markdown.html"),
+        "utf8"
+    );
+    
+    //the replace template function is returned, taking in the template, team, and HTML to update the markdown file
+    return replaceTemplates(template, "team", HTML);
+    };
+
+    //the replace templates function takes in the template, placeholder and value
+    const replaceTemplates = (template, placeholder, value) => {
+        //the pattern are the values between the double curly brackets
+        const pattern = new RegExp(`{{${placeholder}}}`, "gm");
+        //the replace method will replace anything between the double curly brackets placeholders with the user input
+        return template.replace(pattern, value);
+    };
+
+    //generate html

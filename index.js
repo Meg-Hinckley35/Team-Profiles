@@ -146,3 +146,45 @@ const createEngineer = async () => {
     employees.push(engineer);
 };
 
+//Here is the create intern function
+const createIntern = async () => {
+    //setting the array of intern questions for user input
+    const internQuestions = [
+        {
+            type: "input",
+            message: "Enter intern name:",
+            name: "name",
+            validate: validateInput,
+        },
+        {
+            type: "input",
+            message: "Enter intern ID:",
+            name: "id",
+            validate: validateInput,
+        },
+        {
+            type: "input",
+            message: "Enter intern email:",
+            name: "email",
+            validate: validateInput,
+        },
+        {
+            type: "input",
+            message: "Enter intern school name:",
+            name: "school",
+            validate: validateInput,
+        },
+    ];
+
+    //the intern's answers will be generated from the user input to the questions
+    const internAnswers = await inquirer.prompt(internQuestions);
+
+    //the new instance for the intern class will take these answers
+    const intern = new Intern(internAnswers);
+
+    //the intern object is then pushed into the employees array
+    employees.push(intern);
+};
+
+//Now to add a function to initialize the app
+init();

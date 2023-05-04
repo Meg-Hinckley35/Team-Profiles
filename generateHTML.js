@@ -34,3 +34,20 @@ const generateHTML = (employees) => {
     //the object is the html array are then joined and passed into the render full markdown function
     return renderFullMarkdown(HTML.join("")); 
 };
+
+//render manager function takes in the new instance of the manager class
+const renderManager = (manager) => {
+    let template = fs.readFileSync(
+        path.resolve(templatesDir, "manager.html"),
+        "utf8"
+    );
+    //here we want to change the placeholders in manager.html into the user-inputted values
+    template =replaceTemplates(template, "name", manager.getName());
+    template =replaceTemplates(template, "id", manager.getId());
+    template =replaceTemplates(template, "role", manager.getRole());
+    template =replaceTemplates(template, "email", manager.getEmail());
+    template =replaceTemplates(template, "officeNumber", manager.getOfficeNumber());
+
+    //we then return the updated template
+    return template;
+};

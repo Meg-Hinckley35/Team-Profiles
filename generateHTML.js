@@ -52,18 +52,35 @@ const renderManager = (manager) => {
     return template;
 };
 
-//render manager function takes in the new instance of the engineer class
+//render engineer function takes in the new instance of the engineer class
 const renderEngineer = (engineer) => {
     let template = fs.readFileSync(
         path.resolve(templatesDir, "engineer.html"),
         "utf8"
     );
-    //here we want to change the placeholders in engineer.html into the user-inputted values
+    //here we want to change the placeholders in intern.html into the user-inputted values
     template =replaceTemplates(template, "name", engineer.getName());
     template =replaceTemplates(template, "id", engineer.getId());
     template =replaceTemplates(template, "role", engineer.getRole());
     template =replaceTemplates(template, "email", engineer.getEmail());
     template =replaceTemplates(template, "github", engineer.getGithub());
+
+    //we then return the updated template
+    return template;
+};
+
+//render intern function takes in the new instance of the intern class
+const renderIntern = (intern) => {
+    let template = fs.readFileSync(
+        path.resolve(templatesDir, "intern.html"),
+        "utf8"
+    );
+    //here we want to change the placeholders in intern.html into the user-inputted values
+    template =replaceTemplates(template, "name", intern.getName());
+    template =replaceTemplates(template, "id", intern.getId());
+    template =replaceTemplates(template, "role", intern.getRole());
+    template =replaceTemplates(template, "email", intern.getEmail());
+    template =replaceTemplates(template, "school", intern.getSchool());
 
     //we then return the updated template
     return template;

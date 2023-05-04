@@ -106,4 +106,5 @@ const renderFullMarkdown = (HTML) => {
         return template.replace(pattern, value);
     };
 
-    //generate html
+    //generate html is exported so it can be accessed by the index.js file
+    module.exports = generateHTML;

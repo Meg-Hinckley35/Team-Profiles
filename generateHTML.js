@@ -51,3 +51,20 @@ const renderManager = (manager) => {
     //we then return the updated template
     return template;
 };
+
+//render manager function takes in the new instance of the engineer class
+const renderEngineer = (engineer) => {
+    let template = fs.readFileSync(
+        path.resolve(templatesDir, "engineer.html"),
+        "utf8"
+    );
+    //here we want to change the placeholders in engineer.html into the user-inputted values
+    template =replaceTemplates(template, "name", engineer.getName());
+    template =replaceTemplates(template, "id", engineer.getId());
+    template =replaceTemplates(template, "role", engineer.getRole());
+    template =replaceTemplates(template, "email", engineer.getEmail());
+    template =replaceTemplates(template, "github", engineer.getGithub());
+
+    //we then return the updated template
+    return template;
+};

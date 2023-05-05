@@ -8,6 +8,7 @@ const generateHTML = require("./generateHTML.js");
 const Manager = require("./lib/manager");
 const Engineer = require("./lib/engineer");
 const Intern = require("./lib/intern");
+
 //we declare employees as an empty variable
 const employees = [];
 //we will declare is team complete with a boolean and set it to false
@@ -55,7 +56,7 @@ const init = async () => {
     }
     //the employees array is passed into the generate html function and then markdown is used to create a new team-profile.html
     const HTML = generateHTML(employees);
-    fs.writeFileSync("team-profiles.html", HTML, (err) => {
+    fs.writeFileSync("profiles.html", HTML, (err) => {
         //we will catch errors with this
         if(err){
             console.log(err);

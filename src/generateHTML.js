@@ -5,7 +5,8 @@ const fs = require("fs");
 const path = require("path");
 
 //the templates directory in imported
-const templatesDir = path.resolve(__dirname, "../templates");
+const OUTPUT_DIR = path.resolve(__dirname, "output");
+const outputPath = path.join(OUTPUT_DIR, "profiles.html");
 
 //generate html function takes in the employee array
 const generateHTML = (employees) => {
@@ -32,7 +33,7 @@ const generateHTML = (employees) => {
     );
 
     //the object is the html array are then joined and passed into the render full markdown function
-    return renderFullMarkdown(HTML.join("")); 
+    return renderFullMarkdown(HTML.join(outputPath)); 
 };
 
 //render manager function takes in the new instance of the manager class
